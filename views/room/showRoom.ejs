@@ -1,0 +1,141 @@
+<%- include("../layouts/header", {title: title}); %>
+
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+        <script
+	  	    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var sPositions = localStorage.positions || "{}",
+                positions = JSON.parse(sPositions);
+                $.each(positions, function (id, pos) {
+                $("#" + id).css(pos)
+                });
+                $('.squareclass a').draggable({
+                    containment: "parent",
+                    opacity: 0.3,
+                    scroll: false,
+                    stop: function (event, ui) {
+                    positions[this.id] = ui.position
+                    localStorage.positions = JSON.stringify(positions)
+                    }
+                });
+            });
+        </script>
+        <style>
+            .sensorclass {
+                height:20px;
+                width:20px;
+                background-color:black;
+                text-align:center;
+                cursor:grab;
+            }
+            .squareclass {
+                border-style:solid
+            }
+        </style>
+        <script>
+            function setDimensions(width, height) {
+                var elem = document.getElementById("square");
+                var quot = parseInt(width) / parseInt(height)
+                w = 200 * quot;
+                h = 200;
+                if(w > 600) {
+                    w = 600;
+                    h = 600 / quot;
+                }
+                elem.style.width = w + "px";
+                elem.style.height = h + "px";
+                localStorage.setItem("wid", elem.style.width);
+                localStorage.setItem("hei", elem.style.height);
+            }
+        </script>
+
+<!--
+            function drag_start(event) {
+                console.log("Drag_start-function");
+                var style = window.getComputedStyle(event.target, null);
+                var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY) + ',' + event.target.id;
+                console.info("left = ", parseInt(style.getPropertyValue("left")));
+                console.info("clientX = ", event.clientX);
+                console.info("top = ", parseInt(style.getPropertyValue("top")));
+                console.info("clientY = ", event.clientY);
+                console.info(str);
+                event.dataTransfer.setData("Text", str);
+            }
+
+            function drop(event) {
+                //console.log("Drop-function");
+                var offset = event.dataTransfer.getData("Text").split(',');
+                var dm = document.getElementById(offset[2]);
+                dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
+                dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
+                //console.info("X-value = ", dm.style.left);
+                //console.info("Y-value = ", dm.style.top);
+                event.preventDefault();
+                return false;
+            }
+
+            function drag_over(event) {
+                event.preventDefault();
+                return false;
+            }
+    	</script>
+-->
+      </head>
+
+      <br>
+      <div class="roomBody">
+
+      <p>Set the dimensions of the room</p>
+      <form class="label-left" method="post" action=/sensors/room/create>
+
+          <label>Width:</label>
+          <br>
+          <input type="number" name="height" id="height">
+          <br><br>
+          <label>Length:</label>
+          <br>
+          <input type="number" name="width" id="width">
+          <br><br>
+          <input type = "button" onclick = "setDimensions(document.getElementById('width').value,document.getElementById('height').value)"
+            value = "Set" />
+
+      </form>
+      <img src="/style/bitman.png" class="roomImage" alt="">
+      <br>
+      <div class="roomInfo">
+      <div id="square" class="squareclass" style="height:300px;width:400px;border:2px solid black;">
+          <% for (const sensor of sensors) { %>
+              <a href = room/show/<%= sensor.sensorId %> id="draggableDiv<%= sensor.sensorId %>" class="sensorclass">#<%= sensor.customId %>  <%= sensor.name ? ( '-' + sensor.name )  : '' %></a>
+          <% }; %>
+      </div>
+
+<p>Guide to start to the measurements</p>
+<ol>1. Make sure that your reciever sensor is plugged in with usb and indicating "R".</ol>
+<ol>2. Make sure that your sending sensor/s is connected with a powersource and indicating their unique id's.</ol>
+<ol>3. Now run the connect.py script to start collecting live data.</ol>
+
+</div>
+</div>
+<br><br><br>
+
+<script>
+    function getDimensions() {
+        document.getElementById('square').style.width = localStorage.getItem("wid");
+        document.getElementById('square').style.height = localStorage.getItem("hei");
+    }
+    window.onload = getDimensions();
+</script>
+
+    </html>
+<%- include("../layouts/footer"); %>

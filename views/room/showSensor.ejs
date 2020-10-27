@@ -1,0 +1,79 @@
+<%- include("../layouts/header", {title: title}); %>
+
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+
+      </head>
+      <body>
+          <div class="roomBody">
+          <p>Data from sensor #<%= sensor.customId %> <%= sensor.name ? ( ' -' + sensor.name) : '' %> </p>
+
+            <% if(mixMaxData) { %>
+                <table style="width:100%;">
+                    <tr>
+                        <th>Date: <%= mixMaxData.date %></th>
+                        <th>Temperature</th>
+                        <th>Light condition</th>
+                    </tr>
+                    <tr>
+                        <td>Min</td>
+                        <td><%= mixMaxData.min_temperature %></td>
+                        <td><%= mixMaxData.min_lightcondition %></td>
+                    </tr>
+                    <tr>
+                        <td>Max</td>
+                        <td><%= mixMaxData.max_temperature %></td>
+                        <td><%= mixMaxData.max_lightcondition %></td>
+                    </tr>
+                </table>
+            <% } %>
+          <br>
+          <table style="width:100%">
+              <tr>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Temperature</th>
+                  <th>Light condition</th>
+              </tr>
+              <%
+                min = 9999
+                max = -9999
+                minval = 0
+                maxval = 0
+                i = 0
+                for (const sensor of sensors) {
+                  if( sensor.lightcondition < min){
+                    minval = i
+                    min = sensor.lightcondition
+                  }
+                  if(sensor.lightcondition > max){
+                    maxval = i
+                    max = sensor.lightcondition
+                  }
+              %>
+              <tr>
+                  <td><%= new Date(sensor.dateAndTime).toDateString().substr(4) %></td>
+                  <td><%= sensor.dateAndTime.substr(11, 8); %></td>
+                  <td><span style="color:red;"><%= sensor.temperature %></span> </td>
+                  <td><span id="<%= i++ %>"><%= sensor.lightcondition %> </td>
+              </tr>
+              <% }; %>
+          </table>
+          </div>
+      </body>
+    <script>
+        function init(){
+            var minval = '<%= minval %>',
+                maxval = '<%= maxval %>';
+                console.log(minval + ' : : ' + maxval);
+            document.getElementById(minval).style.color = 'yellow';
+            document.getElementById(maxval).style.color = 'green';
+        }
+        init();
+    </script>
+
+    </html>
+
+<%- include("../layouts/footer"); %>

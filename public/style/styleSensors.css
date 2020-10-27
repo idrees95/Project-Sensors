@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab');
+
+html {
+    background-size: cover;
+    background-image: url("/style/bg-masthead.jpg");
+    background-attachment: fixed;
+    height: 90%;
+}
+
+body {
+    margin: 8px auto;
+    width: 1000px;
+    color: white;
+    padding: 10px 50px;
+    min-height:100%;
+    position:relative;
+    padding-bottom:[footer-height]
+}
+
+h1 {
+    font-size: 32 px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+.navbar li {
+    display: inline;
+    [COLOR="Red"]padding-right: 30px;[/COLOR]
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.navbar li {
+	display: inline;
+}
+
+.navbar a {
+	text-decoration: none;
+	font-family: Cambria, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: normal;
+	letter-spacing: normal;
+	line-height: 1.3em;
+	color: #596365;
+}
+
+.navbar a:hover {
+	text-decoration: none;
+	font-family: Cambria, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: normal;
+	letter-spacing: normal;
+	line-height: 1.3em;
+	color: #000;
+}
+p,
+ol {
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+}
+
+a {
+    font-size: 18px;
+    line-height: 1.4;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid white;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Roboto Slab', sans-serif;
+    color: white;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid white;
+}
+
+.body-info {
+    margin: 8px auto;
+    background: #1f1f1f9e;
+    min-width: 60%
+    color: white;
+    padding: 10px 50px;
+}
+
+.footertext {
+    color: white;
+
+}
+
+.footer {
+    position: absolute;
+    left: 0 ; right: 0; bottom: 0;
+    height:[footer-height];
+    text-align: center;
+}
+
+.aboutTitle {
+    text-align: center;
+    text-decoration: underline;
+    /* padding-right: 2.7em; */
+}
+
+.footertext:hover {
+    text-decoration: line-through;
+    color: red;
+}
+
+.clock {
+    position: absolute;
+    right: 36%;
+    bottom: 10%;
+}
+
+.roomBody {
+    background: #1f1f1f9e;
+    padding: 2em 2em;
+}
+
+.roomImage {
+    margin-top: -14em;
+    margin-left: 31em;
+    width: 285px;
+    height: 345px;
+    -ms-transform: rotate(180deg);
+    transform: rotate(-180deg);
+}
+
+.roomInfo {
+    margin-top: -5em;
+}

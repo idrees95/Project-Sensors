@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title><%= title %></title>
+<link rel="stylesheet" href="/style/styleSensors.css">
+<link rel="icon" href="/style/icon.ico">
+
+<header>
+    <nav class="navbar">
+        <a href="/sensors/about">About</a> |
+        <!-- <a href="/sensors/index" style="font-size:14px;">Home</a> | -->
+        <a href="/sensors/room">Room</a> |
+        <% if(isLoggedIn == 1) { %>
+        <a href="/sensors/index">Add sensors</a> |
+        <a href="/sensors/admin">Admin</a> |
+        <a href="/sensors/logout">Logout</a>
+        <% } else { %>
+        <a href="/sensors/login">Login</a>
+        <% } %>
+    </nav>
+</header>

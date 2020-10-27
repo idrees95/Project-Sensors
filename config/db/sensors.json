@@ -1,0 +1,10 @@
+{
+    "host":     "localhost",
+    "user":     "user",
+    "password": "pass",
+    "database": "sensors",
+    "dateStrings": true,
+    "multipleStatements": true,
+    "admin_username": "admin",
+    "admin_password": "admin"
+}

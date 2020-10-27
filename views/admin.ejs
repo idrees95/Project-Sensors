@@ -1,0 +1,60 @@
+<%- include("layouts/header", {title: title}); %>
+
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+      </head>
+      <body>
+          <div class="roomBody">
+
+
+        <h1>Admin</h1>
+
+        <form action="">
+            <input type="date" name="date" style="margin-bottom:10px;" value="<%= date %>">
+            <button type="submit">Filter</button>
+        </form>
+
+        <table style="width:100%">
+            <tr>
+                <th>Sensor Id</th>
+                <th>Custom Id</th>
+                <th>Sensor Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Temperature</th>
+                <th>Light condition</th>
+            </tr>
+            <%
+                min = 9999
+                max = -9999
+                minval = 0
+                maxval = 0
+                i = 0
+                for (const sensor of sensors) {
+                  if( sensor.lightcondition < min){
+                    minval = i
+                    min = sensor.lightcondition
+                  }
+                  if(sensor.lightcondition > max){
+                    maxval = i
+                    max = sensor.lightcondition
+                  }
+              %>
+              <tr>
+                  <td><%= sensor.sensorId %> </td>
+                  <td><%= sensor.customId %></td>
+                  <td><%= sensor.name %></td>
+                  <td><%= new Date(sensor.dateAndTime).toDateString().substr(4) %></td>
+                  <td> <%= sensor.dateAndTime.substr(11, 8); %> </td>
+                  <td> <span style="color:red;"><%= sensor.temperature %></span> </td>
+                  <td> <span id="<%= i++ %>"><%= sensor.lightcondition %> </td>
+              </tr>
+              <% }; %>
+        </table>
+        </div>
+      </body>
+    </html>
+
+<%- include("layouts/footer"); %>

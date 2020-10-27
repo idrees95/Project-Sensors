@@ -1,0 +1,25 @@
+<%- include("layouts/header", {title: title}); %>
+
+
+<div class="roomBody">
+
+
+<h1>Login Page</h1>
+
+
+    <form class="label-left" method="post">
+        <fieldset>
+            <legend>User</legend>
+            <!--<label for="nrOfSensors">Nr of sensors</label><br>-->
+            <input id="name" type="text" name="name"><br><br>
+            <legend>Password</legend>
+            <input id="password" type="password" name="password"><br><br>
+
+            <input type="submit" name="doit" value="Submit">
+        </fieldset>
+    </form>
+    <!--<li><a href="/sensors/room">Show room</a></li><br>-->
+
+</div>
+
+<%- include("layouts/footer"); %>

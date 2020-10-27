@@ -1,0 +1,24 @@
+{
+  "name": "projekt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.17.1",
+    "mysql": "^2.16.0",
+    "promise-mysql": "^3.3.1",
+    "body-parser": "1.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
