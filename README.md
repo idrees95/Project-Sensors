@@ -4,7 +4,10 @@
 # MicroBit
 ![image info](./public/style/bitman.png)
 
- This web application is build for collecting data from BBC microbit sensors and displaying room temperature, light levels during day and stored in a database for later use. 
+ 
+___Description___
+
+This web application is build for collecting data from BBC microbit sensors and displaying room temperature, light levels during day/night and store all incoming information from the sensors in the database overtime. 
  
  ___Web application functionalities___
 * A database to store the data
