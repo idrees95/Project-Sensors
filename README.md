@@ -2,8 +2,11 @@
 
 
 # MicroBit
-  
+![image info](./public/style/bitman.png)
+
+ This web application is build for collecting data from BBC microbit sensors and displaying room temperature, light levels during day and stored in a database for later use. 
  
+ ___Web application functionalities___
 * A database to store the data
 * Possibility to watch the data collection in a terminal as it collects live.
 * Web Application with minimalistic design to make it as clear as possible for the eyes of the user.
@@ -40,7 +43,7 @@ Connect the reciever microbit with usb to pc and it should indicate/display "R".
 ###### step4: Running the web application
 In e.g cygwin or Powershell terminal navigate your way to where the project is located and run "node index.js" to start the server.
 ###### step5: Open the web application
-Start the website by typing http://localhost:1337/sensors/about.
+Start the website by typing http://localhost:1337/sensors/index.
 ###### step6: log in to register number of microbits
 Navigate to "Add sensors" and the desired number of sensors.<br>
 __NOTE: in field sensors id be sure to enter the id that displays on the sensors otherwise the data will be lost and not saved in the database.__
