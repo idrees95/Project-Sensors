@@ -28,20 +28,19 @@ You can use any common browser(not internet Explorer).
 ###### Terminal
 A terminal is also needed. You can use e.g cygwin or powershell.
 ###### Npm & Node.js
-Project Microbit is built with npm and Node.js, type "npm install" to get all the used dependencies in this project.
+Project Microbit is built with npm and Node.js, type `npm install` to get all the used dependencies in this project.
 ###### Python and PIP
-The script is in python so python must be installed on your system. Pip is also used and the dependencies choosen are Serial, MicroPython and MYSQL-connector.
+The script is in python so python must be installed on your system. Pip is also used and the dependencies choosen are Serial, pytz and MYSQL-connector.
+`pip install pyserial`
+`pip install mysql-connector`
+`pip install pytz`
 ###### MySql
 Database is created with Mysql.
 
 ## Guide for running the program
 
 ###### Step1: Setup the database
-Setup the database with or setup.sql and after ddl.sql
-
-First navigate to projectfolder/sql then run the following commands in the terminal.
-
-
+Setup the database with setup.sql and after ddl.sql. First navigate to projectfolder/sql then run the following commands in the terminal.
   * First run this command to create database sensors.<br>
  `mysql -uroot -p < setup.sql`
   * Run this command to create tables.<br>
