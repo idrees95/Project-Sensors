@@ -32,11 +32,20 @@ Project Microbit is built with npm and Node.js, type "npm install" to get all th
 ###### Python and PIP
 The script is in python so python must be installed on your system. Pip is also used and the dependencies choosen are Serial, MicroPython and MYSQL-connector.
 ###### MySql
-Database is created with Mysql and to create the database there is a bash script(sql/reset.bash) that can be run in a terminal to setup the database.
+Database is created with Mysql.
 
 ## Guide for running the program
+
 ###### Step1: Setup the database
-Setup the database with bash.reset or setup.sql and after ddl.sql
+Setup the database with or setup.sql and after ddl.sql
+
+First navigate to projectfolder/sql then run the following commands in the terminal.
+
+
+  * First run this command to create database sensors.<br>
+ `mysql -uroot -p < setup.sql`
+  * Run this command to create tables.<br>
+ `mysql -uroot -p sensors < ddl.sql`
 ###### Step2: Transfer code to sensors
 The python script can be uploaded to the sensors by using an online pythoneditor e.g https://python.microbit.org/v/1.1
 Transfer LoadReceiver.py to a sensor that you want it to be a reciever(R) to recieve data from other microbits.
