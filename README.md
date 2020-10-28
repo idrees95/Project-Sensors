@@ -1,4 +1,21 @@
+
+
+
 # MicroBit
+  
+ 
+* A database to store the data
+* Possibility to watch the data collection in a terminal as it collects live.
+* Web Application with minimalistic design to make it as clear as possible for the eyes of the user.
+* Show the stored information with the help of a web application.
+* Measure temperature/light level during the day.
+* Show the highest and lowest value of the temperature/light during the day.
+* Possible to add as many number of micro bits and rooms as user likes.
+* Color coded values.
+* Login function to show the history of the measurements and only accessible through admin.
+* Only admin able to add sensor/s.
+
+
 ## Guide for installation
 ###### Web browsers
 You can use any common browser(not internet Explorer).
@@ -32,3 +49,7 @@ Navigate to "Add sensors" and the desired number of sensors.
 Open a terminal and navigate yourself to the project folder and to start collecting data, just run "python3 connect.py".
 ###### Step8: See the information
 The information can be shown if clicked on sensors names.
+
+
+--- 
+You can read more about BBC Microbit here [Link](https://microbit.org/) 
