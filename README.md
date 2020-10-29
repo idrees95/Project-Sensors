@@ -29,7 +29,7 @@ You can use any common browser(not internet Explorer).
 A terminal is also needed. You can use e.g cygwin or powershell.
 ###### NodeJS
 Node Js must be installed on your system, follow the link to install for desired operating system. [Node](https://nodejs.org/en/download/)
-###### Npm & Node.js
+###### Npm
 Project Microbit is built with npm, navigate to project to project folder in the terminal and type `npm install` to get all the used dependencies in this project.
 ###### Python and PIP
 The script is in python so python must be installed on your system. Pip is also used and the dependencies choosen are Serial, pytz and MYSQL-connector.<br>
