@@ -11,10 +11,10 @@ import sys
 
 # Connect to serial port
 # s = serial.Serial()
-port = "/dev/ttyS9"
+port = "/dev/ttyS8"
 baudrate = 115200
 
-s = serial.Serial(port, baudrate, timeout = 0)
+s = serial.Serial(port, baudrate)
 if s.isOpen == False :
     s = s.open()
 

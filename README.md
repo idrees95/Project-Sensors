@@ -4,11 +4,11 @@
 # MicroBit
 ![image info](./public/style/bitman.png)
 
- 
+
 ___Description___
 
-This web application is build for collecting data from BBC microbit sensors and displaying room temperature, light levels during day/night and store all incoming information from the sensors in the database overtime. 
- 
+This web application is build for collecting data from BBC microbit sensors and displaying room temperature, light levels during day/night and store all incoming information from the sensors in the database overtime.
+
  ___Web application functionalities___
 * A database to store the data
 * Possibility to watch the data collection in a terminal as it collects live.
@@ -27,30 +27,18 @@ This web application is build for collecting data from BBC microbit sensors and 
 You can use any common browser(not internet Explorer).
 ###### Terminal
 A terminal is also needed. You can use e.g cygwin or powershell.
-###### NodeJS
-Node Js must be installed on your system, follow the link to install for desired operating system. [Node](https://nodejs.org/en/download/)
-###### Npm
-Project Microbit is built with npm, navigate to project to project folder in the terminal and type `npm install` to get all the used dependencies in this project.
+###### Npm & Node.js
+Project Microbit is built with npm and Node.js, type "npm install" to get all the used dependencies in this project.
 ###### Python and PIP
-The script is in python so python must be installed on your system. Pip is also used and the dependencies choosen are Serial, pytz and MYSQL-connector.<br>
-`pip install pyserial`<br>
-`pip install mysql-connector`<br>
-`pip install pytz`<br>
+The script is in python so python must be installed on your system. Pip is also used and the dependencies choosen are Serial, MicroPython and MYSQL-connector.
 ###### MySql
-Database is created with Mysql and you must have MYSQL installed on your system.
-You can install MYSQL with the help of this link depending on your operating system [MYSQL](https://dev.mysql.com/doc/refman/8.0/en/installing.html) 
-
+Database is created with Mysql and to create the database there is a bash script(sql/reset.bash) that can be run in a terminal to setup the database.
 
 ## Guide for running the program
-
 ###### Step1: Setup the database
-Setup the database with setup.sql and after ddl.sql. First navigate to projectfolder/sql then run the following commands in the terminal.
-  * First run this command to create database sensors.<br>
- `mysql -uroot -p < setup.sql`<br> and entering root password that you have chosen during MYSQL installation.
-  * Run this command to create tables.<br>
- `mysql -uroot -p sensors < ddl.sql`
+Setup the database with bash.reset or setup.sql and after ddl.sql
 ###### Step2: Transfer code to sensors
-The python script can be uploaded to the sensors by using an online pythoneditor e.g https://python.microbit.org/v/2.0
+The python script can be uploaded to the sensors by using an online pythoneditor e.g https://python.microbit.org/v/1.1
 Transfer LoadReceiver.py to a sensor that you want it to be a reciever(R) to recieve data from other microbits.
 Transfer LoadSender.py to your other microbit/s. Give each microbit a unique id and specify number of seconds between each reading.
 ###### Step3: Connecting the microbits
@@ -69,5 +57,5 @@ Open a terminal and navigate yourself to the project folder and to start collect
 The information can be shown if clicked on sensors names.
 
 
---- 
-You can read more about BBC Microbit here [BBC microbit](https://microbit.org/) 
+---
+You can read more about BBC Microbit here [Link](https://microbit.org/)

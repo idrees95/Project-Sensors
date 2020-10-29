@@ -12,9 +12,8 @@ body {
     width: 1000px;
     color: white;
     padding: 10px 50px;
-    min-height:100%;
-    position:relative;
-    padding-bottom:[footer-height]
+    min-height: 100%;
+    position: relative;
 }
 
 h1 {
@@ -96,7 +95,7 @@ td {
 .body-info {
     margin: 8px auto;
     background: #1f1f1f9e;
-    min-width: 60%
+    /* min-width: 60% */
     color: white;
     padding: 10px 50px;
 }
@@ -133,6 +132,9 @@ td {
 .roomBody {
     background: #1f1f1f9e;
     padding: 2em 2em;
+    /* width: 100%; */
+    min-width: 500px;
+    min-height: 1000px
 }
 
 .roomImage {
@@ -147,3 +149,37 @@ td {
 .roomInfo {
     margin-top: -5em;
 }
+
+.body-info {
+    width: 100%;
+    max-width: 960px;
+}
+
+@media only screen and (max-width: 479px){
+    html { width: 70%; }
+}
+
+
+/* @media (min-device-width:600px) {
+    img[data-src-600px] {
+        content: attr(data-src-600px, url);
+    }
+}
+
+@media (min-device-width:800px) {
+    img[data-src-800px] {
+        content: attr(data-src-800px, url);
+    }
+}
+
+/* Media Queries: Tablet Landscape */
+/* @media screen and (max-width: 600px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}
+} */
+
+/* Media Queries: Tabled Portrait */
+/* @media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+} */

@@ -18,7 +18,7 @@ IDENTIFIED WITH mysql_native_password
 BY 'pass';
 
 GRANT ALL PRIVILEGES
-	ON sensors.*
+	ON *.*
     TO 'user'@'%';
 
 SHOW GRANTS FOR 'user'@'%';

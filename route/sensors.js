@@ -16,15 +16,15 @@ const config = require("../config/db/sensors.json");
 
 router.use("/room", routeRoom);
 
-router.get("/index", (req, res) => {
+router.get("/addsensors", (req, res) => {
     let data = {
         title: "Home | Sensors",
     };
 
-    res.render("index", data);
+    res.render("addsensors", data);
 });
 
-router.post("/index", urlencodedParser, async (req, res) => {
+router.post("/addsensors", urlencodedParser, async (req, res) => {
     let sensorIds;
     let sensorNames;
 
@@ -96,12 +96,12 @@ router.get("/admin", urlencodedParser, async (req, res) => {
     res.render("admin", data);
 });
 
-router.get("/about", (req, res) => {
+router.get("/index", (req, res) => {
     let data = {
         title: "About | Sensors"
     };
 
-    res.render("about", data);
+    res.render("index", data);
 });
 
 module.exports = router;

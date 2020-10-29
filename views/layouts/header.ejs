@@ -1,16 +1,21 @@
 <!doctype html>
-<meta charset="utf-8">
-<title><%= title %></title>
-<link rel="stylesheet" href="/style/styleSensors.css">
-<link rel="icon" href="/style/icon.ico">
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style/styleSensors.css">
+    <link rel="icon" href="/style/icon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
 
 <header>
     <nav class="navbar">
-        <a href="/sensors/about">About</a> |
+        <a href="/sensors/index">About</a> |
         <!-- <a href="/sensors/index" style="font-size:14px;">Home</a> | -->
         <a href="/sensors/room">Room</a> |
         <% if(isLoggedIn == 1) { %>
-        <a href="/sensors/index">Add sensors</a> |
+        <a href="/sensors/addsensors">Add sensors</a> |
         <a href="/sensors/admin">Admin</a> |
         <a href="/sensors/logout">Logout</a>
         <% } else { %>

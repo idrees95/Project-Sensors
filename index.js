@@ -11,7 +11,7 @@ const app = express();
 
 app.use(session({
     name: 'sid',
-    secret: '*()*)**(#&$*#&$*(*)$#*', 
+    secret: '*()*)**(#&$*#&$*(*)$#*',
     resave: false,
     saveUninitialized: false,
     cookie: {
