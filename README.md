@@ -44,7 +44,7 @@ The python script can be uploaded to the sensors by using an online pythoneditor
 Transfer LoadReceiver.py to a sensor that you want it to be a reciever(R) to recieve data from other microbits.
 Transfer LoadSender.py to your other microbit/s. Give each microbit a unique id and specify number of seconds between each reading.
 ###### Step3: Connecting the microbits
-Connect the reciever microbit with usb to pc and it should indicate/display "R". Connect the other microbits to a battery source provided with microbits and they should display their id's.
+Connect the reciever microbit with usb to pc and it should indicate/display "R" and don't forget to specify which port you are using in connect.py file on line 14 `port = "/dev/ttyS8"` if not sure which port then run check.py `python3 check.py` in the terminal. Connect the other microbits to a battery source provided with microbits and they should display their id's.
 ###### step4: Running the web application
 In e.g cygwin or Powershell terminal navigate your way to where the project is located and run "node index.js" to start the server.
 ###### step5: Open the web application
@@ -52,12 +52,17 @@ Start the website by typing http://localhost:1337/sensors/index.
 ###### step6: log in to register number of microbits
  `user: admin`<br>
  `pass: admin`<br>
-Navigate to "Add sensors" and the desired number of sensors.<br>
+Navigate to "Add sensors" and add the desired number of sensors.<br>
 __NOTE: in field sensors id be sure to enter the id that displays on the sensors otherwise the data will be lost and not saved in the database.__
 ###### step7: Start collecting data
 Open a terminal and navigate yourself to the project folder and to start collecting data, just run "python3 connect.py".
 ###### Step8: See the information
 The information can be shown if clicked on sensors names.
+
+---
+Incase you get error "cannot open port", there is a python script which loops through all your ports and shows which port your reciever"R" is using.
+Navigate to project folder and run `python3 check.py` and it will show you the port that you are using.
+
 
  
 --- 
