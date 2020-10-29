@@ -50,7 +50,7 @@ Setup the database with setup.sql and after ddl.sql. First navigate to projectfo
   * Run this command to create tables.<br>
  `mysql -uroot -p sensors < ddl.sql`
 ###### Step2: Transfer code to sensors
-The python script can be uploaded to the sensors by using an online pythoneditor e.g https://python.microbit.org/v/1.1
+The python script can be uploaded to the sensors by using an online pythoneditor e.g https://python.microbit.org/v/2.0
 Transfer LoadReceiver.py to a sensor that you want it to be a reciever(R) to recieve data from other microbits.
 Transfer LoadSender.py to your other microbit/s. Give each microbit a unique id and specify number of seconds between each reading.
 ###### Step3: Connecting the microbits
