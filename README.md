@@ -50,6 +50,8 @@ In e.g cygwin or Powershell terminal navigate your way to where the project is l
 ###### step5: Open the web application
 Start the website by typing http://localhost:1337/sensors/index.
 ###### step6: log in to register number of microbits
+ `user: admin`<br>
+ `pass: admin`<br>
 Navigate to "Add sensors" and the desired number of sensors.<br>
 __NOTE: in field sensors id be sure to enter the id that displays on the sensors otherwise the data will be lost and not saved in the database.__
 ###### step7: Start collecting data
@@ -57,9 +59,6 @@ Open a terminal and navigate yourself to the project folder and to start collect
 ###### Step8: See the information
 The information can be shown if clicked on sensors names.
 
-###### admin username & password
-`user: admin
- pass: admin
-`
+ 
 --- 
 You can read more about BBC Microbit here [BBC microbit](https://microbit.org/) 
